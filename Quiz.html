@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Data Privacy Quiz</title>
+    <style>
+        #quiz-container {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .quiz-btn {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #32a89b; /* Updated background color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .quiz-btn:hover {
+            background-color: #2a9c8d; /* Slightly darker shade for hover effect */
+        }
+        .response {
+            font-size: 18px;
+            color: #333;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="quiz-container">
+    <p><strong>Quick Data Privacy Quiz:</strong> Should you send credit card details in an email?</p>
+
+    <button id="yes-btn" class="quiz-btn">Yes</button>
+    <button id="no-btn" class="quiz-btn">No</button>
+    <button id="not-sure-btn" class="quiz-btn">Not Sure</button>
+
+    <div class="response" id="response-area"></div>
+</div>
+
+<script>
+    document.getElementById('yes-btn').addEventListener('click', function() {
+        document.getElementById('response-area').innerHTML = `
+            <span style="color: red;">Incorrect</span><br>
+            Sending credit card details via email is unsafe. It’s a security risk and should be avoided.
+        `;
+    });
+
+    document.getElementById('no-btn').addEventListener('click', function() {
+        document.getElementById('response-area').innerHTML = `
+            <span style="color: green;">Correct</span><br>
+            Great! Never send sensitive information like credit card details over email.
+        `;
+    });
+
+    document.getElementById('not-sure-btn').addEventListener('click', function() {
+        document.getElementById('response-area').innerHTML = `
+            <span style="color: orange;">Not Sure</span><br>
+            It’s risky to send credit card details via email. Here’s why: email is not a secure method of transmitting sensitive data.
+        `;
+    });
+</script>
+
+</body>
+</html>
